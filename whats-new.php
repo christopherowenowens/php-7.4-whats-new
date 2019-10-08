@@ -1,8 +1,8 @@
-# php-7.4-whats-new
-A very limited overview of changes in PHP 7.4
-The php file itself has this same info but in PHP syntax.
+<?php
 
-## Typed Properties!
+/* What's new in 7.4 */
+
+// Typed Properties!
 
 	// bool, float, array, object, iterable, self, parent
 	// can be used static or vars
@@ -14,8 +14,8 @@ The php file itself has this same info but in PHP syntax.
 	public var ?bool $yesorno = null; 
 
 
-## Array unpacking!
-### (aka elipsis syntax)
+// Array unpacking!
+// (aka elipsis syntax)
 
 	$pets = ['cat', 'dog', 'goldfish'];
 	$animals = ['horse', 'cow', ...$pets, 'elephant'];
@@ -24,8 +24,8 @@ The php file itself has this same info but in PHP syntax.
 	// PHP < 7.3 returns a parse error
 
 
-## Null Coalesce!
-### (aka ??= operator)
+// Null Coalesce!
+// (aka ??= )
 
 	// old syntax: sets the var to default value if null
 	$value = $value ?? 'default value';
@@ -34,7 +34,7 @@ The php file itself has this same info but in PHP syntax.
 	$value ??= 'default value';
 
 
-## Preloading!
+// Preloading!
 
 	// set /etc/php/7.4/apache/php.ini directive:
 	// opcache.preload = /var/www/webapp/file-to-preload.php
@@ -43,7 +43,7 @@ The php file itself has this same info but in PHP syntax.
 	// for each file, opcache_compile_file
 	// may get 30%-50% performance esp for frameworks / providers
 
-## WeakReference class!
+// WeakReference class!
 
 	$object = new WhateverClass;
 	$weakref = WeakReference::create($object);
@@ -56,8 +56,8 @@ The php file itself has this same info but in PHP syntax.
 	// useful for referencing an object (which may be unset) obliquely
 
 
-## Closures!
-## (aka anonymous functions)
+// Closures!
+// (aka anonymous functions)
 
 	// Example adapted from https://kinsta.com/blog/php-7-4/
 	// I use pow() since it's faster
@@ -85,7 +85,7 @@ The php file itself has this same info but in PHP syntax.
 	__serialize(): array;
 	__unserialize(array $data): void;
 
-## Change in + and . concatenation
+// Change in + and . concatenation
 
 	// Now, . has a lower precendence - arithmetic first, then string ops.
 
